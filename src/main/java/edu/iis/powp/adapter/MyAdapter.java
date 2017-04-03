@@ -39,6 +39,7 @@ public class MyAdapter implements IPlotter
         line.setEndCoordinates(x, y);
 
 		dpc.drawLine(line);
+		setPosition(x,y);
     }
 
     @Override
