@@ -9,10 +9,20 @@ import edu.iis.powp.app.DriverManager;
 
 public class SelectTestFigureOptionListener implements ActionListener
 {
-
+	private String figure = null;
+	
+	public SelectTestFigureOptionListener(String string) {
+			this.figure = string;
+	}
+		
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	if(figure.equals("Figure Joe 1")) {
+    		    		FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	}
+    	else if (figure.equalsIgnoreCase("Figure Joe 2")) {
+    		    		FiguresJoe.figureScript2(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	}
     }
 }
