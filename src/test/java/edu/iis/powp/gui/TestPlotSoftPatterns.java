@@ -29,7 +29,7 @@ public class TestPlotSoftPatterns
 	 */
 	private static void setupPresetTests(Context context) {
 	    SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener();
-		
+		// przy wykorzystaniu drivera "Drawer Simulator" wykonanie testu powoduje narysowanie kwadratu z dwoma przekatnymi
 		context.addTest("Figure Joe 1", selectTestFigureOptionListener);	        
 	}
 
