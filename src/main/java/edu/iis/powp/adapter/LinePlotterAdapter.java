@@ -5,11 +5,11 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.kis.powp.drawer.panel.DrawPanelController;
 import edu.kis.powp.drawer.shape.ILine;
 import edu.kis.powp.drawer.shape.LineFactory;
-
+// z adaptera warto korzystac gdy istnieje potrzeba zapewnienia wspolpracy miedzy dwoma klasami o niekompatybilnych interfejsach, adapter "adaptuje" jedna z klas na interfejs drugiej 
 
 /**
  * Plotter adapter to drawer with several bugs. 
- */
+ */ 
 public class LinePlotterAdapter implements IPlotter
 { 
 	private int startX = 0, startY = 0;
