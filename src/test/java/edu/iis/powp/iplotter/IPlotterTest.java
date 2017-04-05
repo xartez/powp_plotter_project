@@ -2,8 +2,7 @@ package edu.iis.powp.iplotter;
 
 import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.client.plottermagic.preset.FiguresJoe;
-
-
+// aby sparametryzowac tworzone linie nalezaloby dodac nowa metode w fabryce LineFactory oraz utworzyc nowa klase Line, ktorej konstruktor przyjmowalby, np. grubosc lini, styl linii 
 /**
  * Plotter test.
  * 
