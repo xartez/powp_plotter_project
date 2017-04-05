@@ -5,18 +5,19 @@ import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import edu.iis.client.plottermagic.AbstractPlotter;
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.powp.adapter.AbstractPlotterAdapter;
 import edu.iis.powp.adapter.CustomLinePlotterAdapter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.app.Context;
 import edu.iis.powp.app.DriverManager;
 import edu.iis.powp.appext.ApplicationWithDrawer;
-import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
+
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
-import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
-import edu.kis.powp.drawer.panel.DrawPanelController;
+
 import edu.kis.powp.drawer.shape.LineFactory;
 
 
@@ -32,9 +33,11 @@ public class TestPlotSoftPatterns
 	private static void setupPresetTests(Context context) {
 	    SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener("Figure Joe 1");
 	    SelectTestFigureOptionListener selectTestFigureOptionListener2 = new SelectTestFigureOptionListener("Figure Joe 2");
+	    SelectTestFigureOptionListener selectTestFigureOptionListener3 = new SelectTestFigureOptionListener("Figure Jane");
 		// przy wykorzystaniu drivera "Drawer Simulator" wykonanie testu powoduje narysowanie kwadratu z dwoma przekatnymi
 		context.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		context.addTest("Figure Joe 2", selectTestFigureOptionListener2);	        
+		context.addTest("Figure Joe 2", selectTestFigureOptionListener2);	
+		context.addTest("Figure Jane", selectTestFigureOptionListener3);	 
 	}
 
 	/**
@@ -51,6 +54,9 @@ public class TestPlotSoftPatterns
 		context.addDriver("Drawer Simulator", plotter);
 		IPlotter customLinePlotter = new CustomLinePlotterAdapter(ApplicationWithDrawer.getDrawPanelController(), LineFactory.getSpecialLine());
 		context.addDriver("Custom Line Plotter", customLinePlotter);
+		
+		AbstractPlotter abstractPlotter = new AbstractPlotterAdapter(0, 0, ApplicationWithDrawer.getDrawPanelController());
+		context.addDriver("Abstract Plotter", abstractPlotter);
 		context.updateDriverInfo();
 	}
 
@@ -59,13 +65,13 @@ public class TestPlotSoftPatterns
 	 * 
 	 * @param context Application context.
 	 */
-	private static void setupDefaultDrawerVisibilityManagement(Context context) {
+/*	private static void setupDefaultDrawerVisibilityManagement(Context context) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
         context.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility", 
         		new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
         defaultDrawerWindow.setVisible(true);
 	}
-	
+	*/
 	/**
 	 * Setup menu for adjusting logging settings.
 	 * 
