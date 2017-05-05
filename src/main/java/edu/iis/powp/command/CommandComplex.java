@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.iis.client.plottermagic.IPlotter;
-
+//CommandComplex wykorzystuje wzorzec kompozyt
 public class CommandComplex implements PlotterCommand {
 	private List<PlotterCommand> queue = new ArrayList<>();
 	

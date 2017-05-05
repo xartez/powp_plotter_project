@@ -34,10 +34,16 @@ public class TestPlotSoftPatterns
 	    SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener("Figure Joe 1");
 	    SelectTestFigureOptionListener selectTestFigureOptionListener2 = new SelectTestFigureOptionListener("Figure Joe 2");
 	    SelectTestFigureOptionListener selectTestFigureOptionListener3 = new SelectTestFigureOptionListener("Figure Jane");
+	    SelectTestFigureOptionListener selectTestFigureOptionListener4 = new SelectTestFigureOptionListener("Circle");
+	    SelectTestFigureOptionListener selectTestFigureOptionListener5 = new SelectTestFigureOptionListener("Rectangle");
+	    SelectTestFigureOptionListener selectTestFigureOptionListener6 = new SelectTestFigureOptionListener("Triangle");
 		// przy wykorzystaniu drivera "Drawer Simulator" wykonanie testu powoduje narysowanie kwadratu z dwoma przekatnymi
 		context.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		context.addTest("Figure Joe 2", selectTestFigureOptionListener2);	
 		context.addTest("Figure Jane", selectTestFigureOptionListener3);	 
+		context.addTest("Circle", selectTestFigureOptionListener4);
+		context.addTest("Rectangle", selectTestFigureOptionListener5);
+		context.addTest("Triangle", selectTestFigureOptionListener6);
 	}
 
 	/**
